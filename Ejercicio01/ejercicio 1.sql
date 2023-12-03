@@ -1,0 +1,2 @@
+SELECT *
+FROM Clientes_VIP;
