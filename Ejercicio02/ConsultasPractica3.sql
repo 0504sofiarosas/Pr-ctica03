@@ -26,6 +26,18 @@ FROM productos
 WHERE scolorproducto = 'Amarillo'
 GROUP BY scolorproducto;
 
+--Ejercicio G
+select count(nidorden) as Cantidad_de_ordenes_totales
+from ordenes
+
+--Ejercicio J
+
+select (select count(nedad)
+	from clientes
+	where (nedad != 20 and nedad != 25 and nedad != 40)) as Total
+from clientes
+group by Total
+
 --Ejercicio K
 SELECT sNombre, nEdad
 FROM Clientes 
@@ -35,3 +47,8 @@ WHERE (sApellidoPaterno = 'Pérez') or (sApellidoMaterno = 'Pérez');
 SELECT sNombre, sApellidoPaterno, sCorreoElectronico, sGenero, sNumeroTelefonico
 FROM Clientes 
 WHERE (sApellidoPaterno LIKE 'S%') and (sApellidoMaterno LIKE '%a%');
+
+--Ejercicio R
+select scolorproducto as Colores
+from productos
+group by Colores
