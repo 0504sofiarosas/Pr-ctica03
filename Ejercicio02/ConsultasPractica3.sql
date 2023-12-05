@@ -1,54 +1,53 @@
 --Ejercicio A
-select snombreproducto, nprecioproducto, scolorproducto, stamanoproducto
-from productos;
+SELECT snombreproducto, nprecioproducto, scolorproducto, stamanoproducto
+FROM productos;
 
 --Ejercicio B
-select snombreproducto, nprecioproducto, scolorproducto, sdetallesproducto, stamanoproducto
-from productos
-where stamanoproducto = 'Mediano';
+SELECT snombreproducto, nprecioproducto, scolorproducto, sdetallesproducto, stamanoproducto
+FROM productos
+WHERE stamanoproducto = 'Mediano';
 
 --Ejercicio C
-select snombre, sgenero, nedad, susuario, scontrasena
-from clientes;
+SELECT snombre, sgenero, nedad, susuario, scontrasena
+FROM clientes;
 
 --Ejercicio D
-select *
-from clientes
-where nedad <> 24;
+SELECT *
+FROM clientes
+WHERE nedad <> 24;
 
 --Ejercicio E
-select sdescripcion
-from ccodigosproducto;
+SELECT sdescripcion
+FROM ccodigosproducto;
 
 --Ejercicio F
 SELECT scolorproducto, AVG(nprecioproducto) as promedio_precio
 FROM productos
 WHERE scolorproducto = 'Amarillo'
-GROUP BY scolorproducto;
+group by scolorproducto;
 
 --Ejercicio G
-select count(nidorden) as Cantidad_de_ordenes_totales
-from ordenes
+SELECT count(nidorden) as Cantidad_de_ordenes_totales
+FROM ordenes
 
 --Ejercicio J
-
-select (select count(nedad)
-	from clientes
-	where (nedad != 20 and nedad != 25 and nedad != 40)) as Total
-from clientes
+SELECT (SELECT count(nedad)
+	FROM clientes
+	WHERE (nedad != 20 and nedad != 25 and nedad != 40)) as Total
+FROM clientes
 group by Total
 
 --Ejercicio K
-SELECT sNombre, nEdad
-FROM Clientes 
-WHERE (sApellidoPaterno = 'Pérez') or (sApellidoMaterno = 'Pérez');
+SELECT snombre || ' ' || sapellidopaterno || ' ' || sapellidomaterno, susuario
+FROM clientes 
+WHERE (sapellidopaterno = 'Pérez') or (sapellidomaterno = 'Pérez');
 
 --Ejercicio M
-SELECT sNombre, sApellidoPaterno, sCorreoElectronico, sGenero, sNumeroTelefonico
-FROM Clientes 
-WHERE (sApellidoPaterno LIKE 'S%') and (sApellidoMaterno LIKE '%a%');
+SELECT snombre, sapellidopaterno, scorreoelectronico, sgenero, snumerotelefonico
+FROM clientes 
+WHERE (sapellidoPaterno LIKE 'S%') and (sapellidomaterno LIKE '%a%');
 
 --Ejercicio R
-select scolorproducto as Colores
-from productos
+SELECT scolorproducto as Colores
+FROM productos
 group by Colores
