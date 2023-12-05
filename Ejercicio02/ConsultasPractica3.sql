@@ -37,8 +37,13 @@ SELECT (SELECT count(nedad)
 FROM clientes
 group by Total
 
---Ejercicio K
-SELECT snombre || ' ' || sapellidopaterno || ' ' || sapellidomaterno, susuario
+--Ejercicio K, versión uno
+SELECT snombre || ' ' || sapellidopaterno || ' ' || sapellidomaterno as nombre_completo, susuario 
+FROM clientes 
+WHERE (sapellidopaterno = 'Pérez') or (sapellidomaterno = 'Pérez');
+
+--Ejercicio K, versión dos
+SELECT snombre, sapellidopaterno, sapellidomaterno, susuario 
 FROM clientes 
 WHERE (sapellidopaterno = 'Pérez') or (sapellidomaterno = 'Pérez');
 
