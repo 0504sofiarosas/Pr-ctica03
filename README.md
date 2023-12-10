@@ -19,3 +19,19 @@ pgAdmin 4
 
     -Ejercicio 02: 
     Se realizan 10 consultas de una base de datos.
+
+## Observaciones:
+
+### Ejercicio01
+Bien
+
+### Ejercicio02
+Bien, mayormente bien
+
+## Calificacion:
+
+- Ejercicio01 (2 pts): 2
+
+- Ejercicio02 (8 pts): 7
+
+### Total: 9
